@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quizzes by Further Insights</title>
+  </head>
+
+  <body>
+
+    <script>
+      var script = document.createElement('script')
+      script.setAttribute('src', "//embed.furtherinsights.com/quizEmbed.js")
+      var quizId = window.location.pathname.match(/[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}/)
+      if(quizId !== null) {
+        script.dataset.quizId = quizId[0]
+        document.body.appendChild(script)
+      } else {
+        console.info('invalid quiz id')
+      }
+    </script>
+  </body>
+</html>
